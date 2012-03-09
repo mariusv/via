@@ -1,4 +1,51 @@
 <script src="js/general.js"></script>
+<!--<link rel="stylesheet" href="css/jsKeyboard.css" type="text/css" media="screen"/>-->
+<script type="text/javascript" src="js/jsKeyboard.js"></script>
+
+<script type="text/javascript">
+     $(function () {
+         jsKeyboard.init("virtualKeyboard");
+         $("#txtContent").val(initText);
+     });
+     
+     function focusIt(t) {
+        // define where the cursor is to write character clicked.
+         jsKeyboard.currentElement = $(t);
+         jsKeyboard.show();
+     }
+
+     function showKeyboard(id) {
+         clean($("#" + id));
+         jsKeyboard.currentElement = $("#"+id);
+         jsKeyboard.show();
+     }
+     var isCleaned = false;
+     function clean(t) {
+         if (!isCleaned) {
+             $(t).text("");
+             isCleaned = true;
+         }
+     }
+     var initText = "click to here to start writing...";
+     function send() {
+         if ( $("#txtContent").val() != initText && $("#txtContent").val().length > 0) {
+             $("#requestForm").css("display", "none");
+             window.setTimeout('$("#feedback").html("Your request has been processing. Please wait...").css("display","block");', 100);
+             window.setTimeout('$("#feedback").html("Your request has been sent. You will see request form in 5 seconds").css("display","block");', 2000);
+             window.setTimeout('showRequestForm()', 7000);
+         }
+         else {
+             $("#feedback").html("Please write your request...").css("display","block");
+         }
+     }
+
+     function showRequestForm() {
+         $("#requestForm").css("display", "block");
+         $("#feedback").css("display", "none");
+         $("#feedback").html("");
+     }
+ </script>
+ 
 <div class="contact_content content_box">
 	<div class="text_content">
 		<h1>CONTACT</h1>
@@ -10,13 +57,15 @@
 		<p class="note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 		<form id="ajax-contact-form" action="javascript:alert('success!');">
 			<div id="note"></div>
-			<input type="text" name="name" value="" placeholder="Name" />
-			<input type="text" name="email" value="" placeholder="Email" />
-			<textarea name="message" placeholder="Message"></textarea>
+			<input type="text" name="name" value="" placeholder="Name" onfocus="jsKeyboard.focus(this);clean(this);"/>
+			<input type="text" name="email" value="" placeholder="Email" onfocus="jsKeyboard.focus(this);clean(this);" />
+			<textarea name="message" placeholder="Message" onfocus="jsKeyboard.focus(this);clean(this);"></textarea>
 			<input name="submit" type="submit" value="Submit" />
 		</form>
+		<div id="virtualKeyboard">
+			</div>
 	</div>
-	<div class="map_content">
+<!--	<div class="map_content">
 		<div id="map" style="height:100%; width:100%;"></div>
-	</div>
+	</div>-->
 </div>
