@@ -121,7 +121,7 @@ var jsKeyboard = {
         jsKeyboard.currentElement.val(t);
     },
     show: function() {
-        $("#keyboard").animate({ "bottom": "0", "left": "50px" }, "slow", function() { });
+        $("#keyboard").animate({ "bottom": "0", "left": "400px" }, "slow", function() { });
     },
     hide: function() {
         $("#keyboard").animate({ "bottom": "-350px" }, "slow", function() { });
