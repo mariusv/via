@@ -10,7 +10,7 @@ Contains only letters, numbers, dots and hyphens (up to 255 characters)
 (Extension) Letters only (up to 10 (can be increased in the future) characters)
 */
 
-$regex = '/([a-z0-9_.-]+)'. # name
+$regex = '/([0-9]+)'. # name
 
 '@'. # at
 
