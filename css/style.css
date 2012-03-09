@@ -955,8 +955,9 @@ h2 strong {
 #book {
 	background: url("../images/book.png") no-repeat;
 	position: absolute;
-	width: 830px;
-	height: 260px;
+	color: #333333;
+	width: 1000px;
+	height: 313px;
 	left: 50%;
 	top: 50%;
 	margin-left: -400px;
@@ -966,22 +967,23 @@ h2 strong {
 #pages section {
 	background: url("../images/paper.png") no-repeat;
 	display: block;
-	width: 400px;
-	height: 250px;
+	width: 482px;
+	height: 301px;
 	position: absolute;
-	left: 415px;
-	top: 5px;
+	left: 500px;
+	top: 12px;
 	overflow: hidden;
 }
 #pages section>div {
 		display: block;
-		width: 400px;
-		height: 250px;
+		width: 482px;
+		height: 301px;
 		font-size: 12px;
 	}
 #pages section p,
 #pages section h2 {
 		padding: 3px 35px;
+		color: #333333;
 		line-height: 1.4em;
 		text-align: justify;
 	}

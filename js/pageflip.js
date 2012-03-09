@@ -3,12 +3,12 @@
 (function() {
 	
 	// Dimensions of the whole book
-	var BOOK_WIDTH = 830;
-	var BOOK_HEIGHT = 260;
+	var BOOK_WIDTH = 1000;
+	var BOOK_HEIGHT = 313;
 	
 	// Dimensions of one page in the book
-	var PAGE_WIDTH = 400;
-	var PAGE_HEIGHT = 250;
+	var PAGE_WIDTH = 482;
+	var PAGE_HEIGHT = 301;
 	
 	// Vertical spacing between the top edge of the book and the papers
 	var PAGE_Y = ( BOOK_HEIGHT - PAGE_HEIGHT ) / 2;
